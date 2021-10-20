@@ -14,8 +14,8 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"ZUS_TM_BOPF_DETAILS_SRV": {
-				"uri": "/sap/opu/odata/sap/ZUS_TM_BOPF_DETAILS_SRV/",
+			"ZUS_BOPF_DETAILS_SRV": {
+				"uri": "/sap/opu/odata/sap/ZUS_BOPF_DETAILS_SRV/",
 				"type": "OData",
 				"settings": {
 					"localUri": "localService/metadata.xml"
@@ -73,7 +73,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "ZUS_TM_BOPF_DETAILS_SRV",
+				"dataSource": "ZUS_BOPF_DETAILS_SRV",
 				"preload": true
 			}
 		},
