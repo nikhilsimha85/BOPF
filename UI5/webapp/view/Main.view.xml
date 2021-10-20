@@ -1,0 +1,69 @@
+<mvc:View controllerName="bopf.BOPFHelp.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+xmlns:l="sap.ui.layout" 	xmlns:core="sap.ui.core" xmlns:t="sap.ui.table">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				
+				<Page id="page" title="{i18n>title}" titleLevel="H3" >
+					<l:VerticalLayout class="sapUiContentPadding" width="30%">
+						<Input
+							id="BOPFInput"
+							placeholder="Enter BOPF Object Name"
+							showSuggestion="true"
+							showValueHelp="true"
+							valueHelpRequest=".onValueHelpRequest"
+							submit=".onSubmit"
+							suggestionItemSelected=".onSubmit"
+							suggestionItems="{path : '/BOPFSet'}">
+							<suggestionItems>
+								<core:Item text="{BO_NAME}" />
+							</suggestionItems>
+						</Input>
+					</l:VerticalLayout>
+					<Panel expandable="true" headerText="BOPF Hierarchy" width="auto" class="sapUiResponsiveMargin" expanded="true">
+						<t:TreeTable
+        					id="treeTable"
+        					selectionMode="None"
+        					enableColumnReordering="false"
+        					expandFirstLevel="false"
+        					rows="{
+            					path : '/HierarchySet',
+            					parameters : {
+                				countMode: 'Inline',
+                				operationMode: 'Client',
+                				treeAnnotationProperties : {
+                    			hierarchyLevelFor : 'Hier_Level',
+                    			hierarchyNodeFor : 'NodeID',
+                    			hierarchyParentNodeFor : 'ParentID',
+                    			hierarchyDrillStateFor : 'DrillState'
+                				}
+            					}
+					        }">
+							<t:columns>
+
+            					<t:Column label="Name">
+                					<t:template>
+                    					<Text text="{Name}" wrapping="false" />
+                					</t:template>
+            					</t:Column>
+								
+            					<t:Column label="Description">
+                					<t:template>
+                    					<Text text="{Description}" wrapping="false" />
+                					</t:template>
+            					</t:Column>
+
+            					<t:Column label="Table Name">
+                					<t:template>
+                    					<Link text="{Table_name}" press=".onHandlePress" />
+                					</t:template>
+            					</t:Column>            					
+            					
+            				</t:columns>
+            			</t:TreeTable>
+					</Panel>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

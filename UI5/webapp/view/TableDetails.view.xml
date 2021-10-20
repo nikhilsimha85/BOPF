@@ -1,0 +1,49 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="bopf.BOPFHelp.controller.TableDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Table Details"
+			showNavButton="true"
+			navButtonPress=".onNavBack">
+				<Table id="idTable"
+					inset="false"
+					growing="true"
+    				growingThreshold="500"
+					items="{
+					path: '/TableSet',
+					 parameters : {
+                		$count : false
+						
+						},
+						suspended: true
+					
+				}">
+				<columns>
+					<Column>
+            			<Text text="Field"/>
+        			</Column>
+        			<Column>
+            			<Text text="Description"/>
+        			</Column>
+        			<Column>
+            			<Text text="Type"/>
+        			</Column>
+        			<Column>
+            			<Text text="Length"/>
+        			</Column>
+    			</columns>	
+    			<items>
+        			<ColumnListItem>
+            			<cells>
+                			<Text text="{Field}"/>
+                			<Text text="{Description}"/>
+                			<Text text="{Type}"/>
+                			<Text text="{Len}"/>
+            			</cells>
+        			</ColumnListItem>
+    			</items>
+    			</Table>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
