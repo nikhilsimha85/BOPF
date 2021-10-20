@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" >
+	<SelectDialog
+		title="BOPF"
+		items="{/BOPFSet}"
+		search=".onValueHelpSearch"
+		confirm=".onValueHelpClose"
+		cancel=".onValueHelpClose">
+		<StandardListItem
+			title="{BO_NAME}"
+			description="{DESCRIPTION}" />
+	</SelectDialog>
+</core:FragmentDefinition>
